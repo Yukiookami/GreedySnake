@@ -18,12 +18,18 @@ class GameControl {
   isLive = true
   // 游戏结束
   gameOver: HTMLElement
+  // 手机操作盘
+  contorButton: HTMLCollection
+  // 重置游戏
+  resetButton: HTMLCollection
 
   constructor () {
     this.sanke = new Sanke()
     this.food = new Food()
     this.scorePanel = new ScorePanel()
     this.gameOver = document.getElementById("game-over")!
+    this.contorButton = document.getElementsByClassName('contor-button')
+    this.resetButton = document.getElementsByClassName('game-reset')
 
     this.init()
   }
@@ -32,6 +38,7 @@ class GameControl {
   init () {
     // 绑定键盘事件
     document.addEventListener('keydown', this.keydownHandler.bind(this))
+    this.clickHandler()
     this.run()
   }
 
@@ -49,6 +56,29 @@ class GameControl {
   // keydownHandler = (event:KeyboardEvent):void => {
   //   this.direction = event.key
   // }
+
+  // 监听点击事件
+  clickHandler () {
+    Array.prototype.forEach.call(this.contorButton, (ele, index) => {
+      ele.addEventListener('click', () => {
+        if (index === 0) {
+          this.direction = "ArrowUp"
+        } else if (index === 1) {
+          this.direction = "ArrowRight"
+        } else if (index === 2) {
+          this.direction = "ArrowDown"
+        } else if (index === 3) {
+          this.direction = "ArrowLeft"
+        }
+      })
+    })
+
+    Array.prototype.forEach.call(this.resetButton, ele => {
+      ele.addEventListener('click', () => {
+        location.reload()
+      })
+    })
+  }
 
   // 蛇移动
   run () {

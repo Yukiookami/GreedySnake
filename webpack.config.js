@@ -28,6 +28,10 @@ module.exports = {
     // 指定要加载的规则
     rules: [
       {
+        test: /\.(png|jpg|gif|svg|jpeg)$/,
+        use: ['file-loader']
+      },
+      {     
         // test是规定生效的文件
         test: /\.ts$/,
         // 要使用的loader

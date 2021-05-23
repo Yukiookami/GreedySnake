@@ -7,40 +7,53 @@
   <title>贪吃蛇</title>
 </head>
 <body>
-  <!-- 游戏主容器 -->
-  <main id="main">
-    <!-- 提示游戏结束 -->
-    <div id="game-over"></div>
-    <!-- 设置游戏舞台 -->
-    <div id="stage">
-      <!-- 蛇 -->
-      <div id="snake">
-        <div></div>
-        <div></div>
-        <div></div>
+  <div class="game-mashin">
+    <!-- 游戏主容器 -->
+    <main id="main">
+      <!-- 提示游戏结束 -->
+      <div id="game-over"></div>
+      <!-- 设置游戏舞台 -->
+      <div id="stage">
+        <!-- 蛇 -->
+        <div id="snake">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+  
+        <!-- 食物 -->
+        <div id="food">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
+  
+      <!-- 计分牌 -->
+      <div id="score-panel">
+        <div>
+          SCORE:
+          <span id="score">0</span>
+        </div>
+  
+        <div>
+          level:
+          <span id="level">1</span>
+        </div>
+      </div>
+    </main>
+  
+    <!-- 手机端操作器 -->
+    <div class="phone-contron">
+      <div class="contor-button top-button"></div>
+      <div class="contor-button right-button"></div>
+      <div class="contor-button bottom-button"></div>
+      <div class="contor-button left-button"></div>
 
-      <!-- 食物 -->
-      <div id="food">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <div class="game-reset a-button"></div>
+      <div class="game-reset b-button"></div>
     </div>
-
-    <!-- 计分牌 -->
-    <div id="score-panel">
-      <div>
-        SCORE:
-        <span id="score">0</span>
-      </div>
-
-      <div>
-        level:
-        <span id="level">1</span>
-      </div>
-    </div>
-  </main>
+  </div>
 </body>
 </html>
